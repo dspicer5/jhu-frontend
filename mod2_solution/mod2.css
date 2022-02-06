@@ -10,6 +10,15 @@ h1 {
   font-weight: bold;
   color: blue;
 }
+/************ Laptops & Desktops ***************/
+
+/************ Mobile Devices ***************/
+@media (min-width: 992) and (max-width: 1199) {
+}
+
+/************ Phones ***************/
+@media (max-width: 991) {
+}
 
 #box {
   background-color: blue;
