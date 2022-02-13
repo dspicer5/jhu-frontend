@@ -1,0 +1,44 @@
+.menu-box {
+  background-color: lightgray;
+  border: 2px black solid;
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-bottom: 10px;
+}
+
+.dropdown {
+  width: 100%;
+}
+h1 {
+  color: black;
+  position: relative;
+  margin-top: auto;
+}
+
+li {
+  background-color: white;
+  border-top: 2px black solid;
+  border-bottom: 2px black solid;
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+#header-nav {
+  background-color: lightgray;
+  color: black;
+  border-top: 2px black solid;
+  border-bottom: 2px black solid;
+}
+
+#menu-title {
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+#nav-list a {
+  color: #951c49;
+  text-align: center;
+}
+#main-content {
+  clear: both;
+}
