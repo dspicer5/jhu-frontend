@@ -47,7 +47,13 @@ WARNING!!! WARNING!!!
             return helloSpeaker.speakSimple(n);
         }
     });
-    
+    //console new_names w/ foreach
+    new_names.forEach(element => console.log(element));
+
+    // Array.prototype.reduce
+
+
+
     // STEP 10:
     // Loop over the names array and say either 'Hello' or "Good Bye"
     // using either the helloSpeaker's or byeSpeaker's 'speak' method.
@@ -78,8 +84,6 @@ WARNING!!! WARNING!!!
         else {
             helloSpeaker.speak(names[i]);
         }
-        //Array.prototype,map
-        console.log(new_names[i])
     }//end for
 
 
