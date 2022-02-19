@@ -47,7 +47,7 @@ WARNING!!! WARNING!!!
             return helloSpeaker.speakSimple(n);
         }
     });
-    //console new_names w/ foreach
+    //console new_names w/ foreach()
     new_names.forEach(element => console.log(element));
 
     // Array.prototype.reduce
