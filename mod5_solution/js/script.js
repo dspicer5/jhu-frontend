@@ -12,7 +12,8 @@ $(function () { // Same as document.addEventListener("DOMContentLoaded"...
 (function (global) {
 
 var dc = {};
-
+// about snippet URL
+var aboutHtmlUrl = "snippets/about.html";
 var homeHtmlUrl = "snippets/home-snippet.html";
 var allCategoriesUrl =
   "https://davids-restaurant.herokuapp.com/categories.json";
@@ -102,9 +103,8 @@ function buildAndShowHomeHTML (categories) {
       // Pay attention to what type of data that function returns vs what the chosenCategoryShortName
       // variable's name implies it expects.
       var chosenCategoryShortName = chooseRandomCategory(categories);
-      chosenCategoryShortName = chosenCategoryShortName.short_name;
-      chosenCategoryShortName = "'" + chosenCategoryShortName + "'";
-      // console.log(chosenCategoryShortName)
+      chosenCategoryShortName = "'" + chosenCategoryShortName.short_name + "'";
+      //console.log(homeHtml)
 
       // TODO: STEP 3: Substitute {{randomCategoryShortName}} in the home html snippet with the
       // chosen category from STEP 2. Use existing insertProperty function for that purpose.
@@ -130,6 +130,8 @@ function buildAndShowHomeHTML (categories) {
     false); // False here because we are getting just regular HTML from the server, so no need to process JSON.
 }
 
+  
+  
 
 // Given array of category objects, returns a random category object.
 function chooseRandomCategory (categories) {
@@ -140,6 +142,21 @@ function chooseRandomCategory (categories) {
   return categories[randomArrayIndex];
 }
 
+  //Random Number Generator (1-5)
+  function RanNum(max) {
+    num = Math.floor(Math.random() * max) + 1
+    return num
+  }
+  // pass in page as object
+  dc.aboutPage = function () {
+    $ajaxUtils.sendGetRequest(
+      aboutHtmlUrl,
+      function (aboutHtml) {
+        insertHtml("#main-content", "Customer Reviews:  " + aboutHtml)
+      }, false);
+  }
+ 
+  
 
 // Load the menu categories view
 dc.loadMenuCategories = function () {
