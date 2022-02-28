@@ -142,24 +142,36 @@ function chooseRandomCategory (categories) {
   return categories[randomArrayIndex];
 }
   
-
-  //Random Number Generator (1-5)
-  function RanNum(max) {
-    num = Math.floor(Math.random() * max) + 1
-    return num
-  }
+  ///////////////////////////////////////////////////////////////////////
 
   // pass in page as object
   dc.aboutPage = function () {
+    // gen random number
+    function ranNum(max) {
+      var num = Math.floor(Math.random() * max) + 1;
+      return num;
+    }
+    
+    // variables to use
+    var rando = ranNum(5)
+    var fullStar = "fa fa-star"
+    var noStar = "fa fa-star-o"
+    
+    // ajax call
     $ajaxUtils.sendGetRequest(
       aboutHtmlUrl,
       function (aboutHtml) {
-        insertHtml("#main-content", "Customer Reviews:  " + aboutHtml)
+        // change to empty Stars
+        var insertStars = insertProperty(aboutHtml, "x", noStar)
+        // replace empty stars with correct number of Stars
+        for (i = 0; i < rando; i++){
+          insertStars = insertStars.replace(new RegExp(noStar), fullStar); 
+        };
+        //  console.log(insertStars);  // Trouble shooting only
+  // Send modified HTML to main content
+  insertHtml("#main-content", "Customer reviews:" + insertStars + " - " + rando + " - star rating")
       }, false); //end afaxUtils
   } // end aboutPage Func
- 
-  
-
 // Load the menu categories view
 dc.loadMenuCategories = function () {
   showLoading("#main-content");
