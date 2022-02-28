@@ -172,6 +172,8 @@ function chooseRandomCategory (categories) {
   insertHtml("#main-content", "Customer reviews:" + insertStars + " - " + rando + " - star rating")
       }, false); //end afaxUtils
   } // end aboutPage Func
+
+/////////////////// end aditional content ///////////////////////////////
 // Load the menu categories view
 dc.loadMenuCategories = function () {
   showLoading("#main-content");
