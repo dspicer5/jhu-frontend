@@ -141,20 +141,22 @@ function chooseRandomCategory (categories) {
   // return category object with that randomArrayIndex
   return categories[randomArrayIndex];
 }
+  
 
   //Random Number Generator (1-5)
   function RanNum(max) {
     num = Math.floor(Math.random() * max) + 1
     return num
   }
+
   // pass in page as object
   dc.aboutPage = function () {
     $ajaxUtils.sendGetRequest(
       aboutHtmlUrl,
       function (aboutHtml) {
         insertHtml("#main-content", "Customer Reviews:  " + aboutHtml)
-      }, false);
-  }
+      }, false); //end afaxUtils
+  } // end aboutPage Func
  
   
 
