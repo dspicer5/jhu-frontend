@@ -8,10 +8,22 @@
     function MsgController($scope) {
         $scope.testMeal = function () {
             // split csv input to array
-            var meals = $scope.foodText.split(",").length;
+            var numMeals = $scope.foodText.split(",").length;
+            // boolean meals <= 3 good
+            if (numMeals <= 2) {
+                var message = "Enjoy";
+            }
+            else {
+                var message = "Too Much";
+            };
             
+            $scope.mealPlan = message + " test";
+        };//end testMeal func
 
-            $scope.mealPlan = meals + " test";
-        };//end testMeal
+        // reset function
+        $scope.clearText = function () {
+            $scope.mealPlan = " ",
+            $scope.foodText = "";
+        }//end clearText function
     }//end Controller
 })();//end IIFE

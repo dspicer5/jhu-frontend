@@ -15,7 +15,8 @@
         <div ng-controller='LunchCheckController'>
             <p>Type in each meal sepertated by a comma</p>
             <input type="text" ng-model="foodText" placeholder="example: eggs, pizza, sushi">
-            <button ng-click="testMeal()">Test meal plan</button>
+            <button ng-click="testMeal()">Test Meal Plan</button>
+            <button ng-click="clearText()">Reset</button>
             <div>{{mealPlan}}</div>
             <br>
         </div>
