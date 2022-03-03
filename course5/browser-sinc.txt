@@ -1,1 +1,2 @@
+cd ./Documents/workspace-vscode/HTML/jhu-frontend/course5
 browser-sync start --server --directory --files "**/*"

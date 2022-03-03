@@ -1,24 +1,24 @@
-<!DOCTYPE html>
+<!doctype html>
 <!--    -->
-<html>
+<html lang="en">
 
     <head>
         <meta charset="utf-8">
-        <link rel="stylesheet" type="text/css" href="./css/styles.css" />
-        <script src=".js/angular.min.js"></script>
-        <script src=".js/app.js"></script>
+        <link rel="stylesheet" href="css/style.css">
+        <script src="js/angular.min.js"></script>
+        <script src="js/app.js"></script>
         <title>Meal Planner</title>
     </head>
 
-    <body ng-app="mealPlan">
-        <h1>Meal Plan</h1>
-        <div ng-controller="countMeals">
+    <body ng-app='LunchCheck'>
+        <h1>Meal Plan Adviser</h1>
+        <div ng-controller='LunchCheckController'>
             <p>Type in each meal sepertated by a comma</p>
-            <p>example: eggs, pizza, sushi</p>
-            <input type="text" ng-model="food">
-            <div>Total Numeric value of person's name is: {{totalValue}}</div>
+            <input type="text" ng-model="foodText" placeholder="example: eggs, pizza, sushi">
+            <button ng-click="testMeal()">Test meal plan</button>
+            <div>{{mealPlan}}</div>
+            <br>
         </div>
-
     </body>
 
 </html>
