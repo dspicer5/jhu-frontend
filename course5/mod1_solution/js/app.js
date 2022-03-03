@@ -15,7 +15,7 @@
             // console.log(numMeals) // test count
 
             // boolean meals <= 3 good
-            if (numMeals <= 2) {
+            if (numMeals <= 3) {
                 var message = "Enjoy!";
             }
             else {
