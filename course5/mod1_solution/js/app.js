@@ -7,17 +7,22 @@
     MsgController.$inject = ['$scope'];
     function MsgController($scope) {
         $scope.testMeal = function () {
-            // split csv input to array
-            var numMeals = $scope.foodText.split(",").length;
+            // assain varriable
+            var numMeals = $scope.foodText;  //.replace(" ", "").split(",").length;
+            numMeals = numMeals.replace(/\s/g, '').replace(/,{2,}/g, '').replace(/,$/, '').replace(/^,/, '');
+            // console.log(numMeals)   // test REGEX
+            numMeals = numMeals.split(",").length;
+            // console.log(numMeals) // test count
+
             // boolean meals <= 3 good
             if (numMeals <= 2) {
-                var message = "Enjoy";
+                var message = "Enjoy!";
             }
             else {
-                var message = "Too Much";
+                var message = "Too much!";
             };
-            
-            $scope.mealPlan = message + " test";
+            // set scope to inject
+            $scope.mealPlan = message;
         };//end testMeal func
 
         // reset function
