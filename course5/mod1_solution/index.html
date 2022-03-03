@@ -14,10 +14,10 @@
         <h1>Meal Plan Adviser</h1>
         <div ng-controller='LunchCheckController'>
             <p>Type in each meal sepertated by a comma: (empty item error checking on)</p>
-            <input type="text" ng-model="foodText" placeholder="example: eggs, pizza, sushi">
+            <input type="text" id="box" ng-model="foodText" placeholder="example: eggs, pizza, sushi">
             <button ng-click="testMeal()">Test Meal Plan</button>
             <button ng-click="clearText()">Reset</button>
-            <div>{{mealPlan}}</div>
+            <div id="msg">{{mealPlan}}</div>
             <br>
         </div>
     </body>

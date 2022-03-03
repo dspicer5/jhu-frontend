@@ -4,4 +4,6 @@ p {
 
 input {
   width: 40%;
+  border-style: solid;
+  border-width: medium;
 }

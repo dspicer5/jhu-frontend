@@ -6,29 +6,41 @@
 
     MsgController.$inject = ['$scope'];
     function MsgController($scope) {
+        // meal fuction
         $scope.testMeal = function () {
             // assain varriable
-            var numMeals = $scope.foodText;  //.replace(" ", "").split(",").length;
-            numMeals = numMeals.replace(/\s/g, '').replace(/,{2,}/g, '').replace(/,$/, '').replace(/^,/, '');
-            // console.log(numMeals)   // test REGEX
-            numMeals = numMeals.split(",").length;
-            // console.log(numMeals) // test count
-
-            // boolean meals <= 3 good
-            if (numMeals <= 3) {
-                var message = "Enjoy!";
+            var strMeals = $scope.foodText;  //.replace(" ", "").split(",").length;
+            var numMeals = 0;
+            var message = "";
+            var msg = document.getElementById("msg");
+            var box = document.getElementById("box");
+            // boolean check if no input
+            if(typeof strMeals === 'undefined'  || $scope.foodText == ""  )  {
+                message = "Please enter data first"
+                msg.style.color = 'red';
+                box.style.borderColor = 'red';
             }
-            else {
-                var message = "Too much!";
-            };
-            // set scope to inject
+            else{
+                strMeals = strMeals.replace(/\s/g, '').replace(/,{2,}/g, '').replace(/,$/, '').replace(/^,/, '');
+                numMeals = strMeals.split(",").length;
+                msg.style.color = 'green';
+                // boolean meals <= 3 good
+                if (numMeals <= 3) {
+                    message = "Enjoy!";
+                }
+                else {
+                    message = "Too much!";
+                };  
+                box.style.borderColor = 'green';
+            }//end outer if/else
             $scope.mealPlan = message;
         };//end testMeal func
 
         // reset function
         $scope.clearText = function () {
-            $scope.mealPlan = " ",
+            $scope.mealPlan = "";
             $scope.foodText = "";
+            box.style.borderColor = 'gray';
         }//end clearText function
     }//end Controller
 })();//end IIFE
