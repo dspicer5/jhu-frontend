@@ -1,0 +1,33 @@
+<!doctype html>
+<!--  https://dspicer5.github.io/jhu-frontend/course5/mod2_solution/  -->
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="css/style.css">
+        <script src="js/angular.min.js"></script>
+        <script src="js/app.js"></script>
+        <title>Meal Planner</title>
+    </head>
+
+    <body ng-app='ShoppingList'>
+        <h1>Shopping List</h1>
+        <!-- Controller 1-->
+        <div ng-controller='ToBuyController'>
+            <p>Input the quantity of each item then blick the "Bought" button</p>
+            <ul>
+                <li><input type="text" id="chooseQuantity" ng-model="toBuyList" placeholder="5">To Buy<button
+                        ng-click="pushRemove()">Bought</button></li>
+            </ul>
+            <p ng-if="empty">Everything is bought</p>
+        </div>
+        <!-- Controller 2-->
+        <div ng-controller='AlreadyBoughtController'>
+            <ul>
+                <li> </li>
+                <p ng-if="empty">Nothing bought yet</p>
+            </ul>
+        </div>
+    </body>
+
+</html>
