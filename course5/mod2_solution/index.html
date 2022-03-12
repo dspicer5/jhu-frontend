@@ -18,7 +18,7 @@
             <h2>Items to Buy</h2>
             <p ng-if="!TBC.emptyArray()">Input the quantity of each item then blick the "Bought" button</p>
             <ol>
-                <li ng-repeat="item in TBC.array">Buy <input> {{item.name}} at
+                <li ng-repeat="item in TBC.array">Buy <input ng-model="quantity"> {{item.name}} at
                     {{item.price | currency : "$$$$$$" }}
                     <button ng-click="TBC.moveItem($index)">
                         Bought
