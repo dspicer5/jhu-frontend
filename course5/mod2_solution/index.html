@@ -7,13 +7,14 @@
         <link rel="stylesheet" href="css/style.css">
         <script src="js/angular.min.js"></script>
         <script src="js/app.js"></script>
-        <title>Meal Planner</title>
+        <title>Shopping List</title>
     </head>
 
     <body ng-app='ShoppingList'>
         <h1>Shopping List</h1>
         <!-- Controller 1-->
-        <div ng-controller='ToBuyController'>
+        <div id="buy" ng-controller='ToBuyController'>
+            <h2>Items to Buy</h2>
             <p>Input the quantity of each item then blick the "Bought" button</p>
             <ul>
                 <li><input type="text" id="chooseQuantity" ng-model="toBuyList" placeholder="5">To Buy<button
@@ -22,9 +23,11 @@
             <p ng-if="empty">Everything is bought</p>
         </div>
         <!-- Controller 2-->
-        <div ng-controller='AlreadyBoughtController'>
+        <div id="bought" ng-controller='AlreadyBoughtController'>
+            <h2>Items Bought</h2>
+            <p>Items Quantity and Cost of each item below</p>
             <ul>
-                <li> </li>
+                <li ng-model="boughtList"> </li>
                 <p ng-if="empty">Nothing bought yet</p>
             </ul>
         </div>

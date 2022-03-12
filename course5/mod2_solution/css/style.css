@@ -1,0 +1,22 @@
+#buy {
+  float: left;
+  width: 40%;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+#bought {
+  float: right;
+  width: 40%;
+  padding-right: 5%;
+  padding-left: 5%;
+}
+body {
+  background-color: rgb(36, 36, 53);
+  color: whitesmoke;
+}
+h1 {
+  text-align: center;
+}
+h2 {
+  text-align: center;
+}
