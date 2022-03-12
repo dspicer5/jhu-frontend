@@ -18,7 +18,7 @@
             <h2>Items to Buy</h2>
             <p ng-if="!TBC.emptyArray()">Input the quantity of each item then blick the "Bought" button</p>
             <ol>
-                <li ng-repeat="item in TBC.array">Buy <input ng-model="quantity"> {{item.name}} at
+                <li ng-repeat="item in TBC.array">Buy <input ng-model="TBC.array[$index].quantity"> {{item.name}} at
                     {{item.price | currency : "$$$$$$" }}
                     <button ng-click="TBC.moveItem($index)">
                         Bought
@@ -27,14 +27,13 @@
             <p class="empty" ng-if="TBC.emptyArray()">Everything is bought</p>
         </div>
 
-
         <!--Controller 2-->
         <div id="bought" ng-controller="AlreadyBoughtController as ABC">
             <h2>Items Bought</h2>
             <p ng-if="!ABC.emptyArray()">Quantity and total cost of each item below</p>
             <ol>
                 <li ng-repeat="item in ABC.array">Bought {{item.quantity}} {{item.name}} for total price of
-                    {{item.price | currency : "$$$$$$" }}
+                    Sum: {{ item.quantity * item.price | currency : "$$$$$$" }}
                 </li>
             </ol>
             <p class="empty" ng-if="ABC.emptyArray()">Nothing bought yet</p>

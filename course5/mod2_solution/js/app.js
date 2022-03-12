@@ -1,5 +1,6 @@
 (function () {
     'use strict';
+
     // ng-app
     angular.module('ShoppingListApp', [])
         .controller('ToBuyController', ToBuyController)
@@ -29,7 +30,7 @@
     function ShoppingListCheckOffService() {
         var service = this;
         // define to buy "TB" array
-        service.toBuy = [
+        service.arrayTB = [
             {name: "Milk", quantity: 2, price: 4},
             {name: "Donuts", quantity: 20, price: 3},
             { name: "Cookies",  quantity: 10, price: 1},
@@ -41,33 +42,35 @@
             { name: "Pork", quantity: 1, price: 10 },
             { name: "Bacon",  quantity: 5, price: 3}
         ];
+
         // declare already bought "AB" array
-        service.alreadyBought = [];
+        service.arrayAB = [];
         // return array to ng-repeat
         service.getTB = function () {
-            return service.toBuy;
+            return service.arrayTB;
         };
         // return true to ng-if
         service.emptyTB = function () {
-            return service.toBuy.length == 0;
+            return service.arrayTB.length < 1;
         };
         // JS splice from array and push to array function
         service.moveItem = function (index) {
             // splice item at index
-            var item = service.toBuy.splice(index, 1)[0];
+            var item = service.arrayTB.splice(index, 1)[0];
+            // calculate total price
+            // item.price = item.quantity * item.price  // place holder
             // push to AB array
-            service.alreadyBought.push(item);
-            // console.log(service.toBuy)
-            // console.log(service.alreadyBought)
+            service.arrayAB.push(item);
+            // console.log(service.arrayTB) // testing 
+            // console.log(service.arrayAB) // testing
         };
         // return array to ng-repeat
         service.getAB = function () {
-            return service.alreadyBought;
+            return service.arrayAB;
         };
         // return true to ng-if
         service.emptyAB = function () {
-            return service.alreadyBought.length == 0;
+            return service.arrayAB.length < 1;
         };
     } // end service
-
 })();
