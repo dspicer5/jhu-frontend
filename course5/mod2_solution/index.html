@@ -16,7 +16,7 @@
         <!-- Controller 1-->
         <div id="buy" ng-controller="ToBuyController as TBC">
             <h2>Items to Buy</h2>
-            <p ng-if="!TBC.emptyArray()">Input the quantity of each item then blick the "Bought" button</p>
+            <p ng-if="!TBC.emptyArray()">Input the quantity of the item and then click the "Bought" button</p>
             <ol>
                 <li ng-repeat="item in TBC.array">Buy <input ng-model="TBC.array[$index].quantity"> {{item.name}} at
                     {{item.price | currency : "$$$$$$" }}
