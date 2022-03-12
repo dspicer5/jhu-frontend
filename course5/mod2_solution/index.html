@@ -10,26 +10,30 @@
         <title>Shopping List</title>
     </head>
 
-    <body ng-app='ShoppingList'>
+    <body ng-app='ShoppingListApp'>
         <h1>Shopping List</h1>
+
         <!-- Controller 1-->
-        <div id="buy" ng-controller='ToBuyController'>
+        <div id="buy" ng-controller="ToBuyController as TBC">
             <h2>Items to Buy</h2>
-            <p>Input the quantity of each item then blick the "Bought" button</p>
-            <ul>
-                <li><input type="text" id="chooseQuantity" ng-model="toBuyList" placeholder="5">To Buy<button
-                        ng-click="pushRemove()">Bought</button></li>
-            </ul>
-            <p ng-if="empty">Everything is bought</p>
+            <p ng-if="!TBC.emptyArray()">Input the quantity of each item then blick the "Bought" button</p>
+            <ol>
+                <li ng-repeat="item in TBC.array">Buy {{item.quantity}} {{item.name}}
+                    <button ng-click="TBC.moveItem($index)">
+                        Bought
+                    </button>
+            </ol>
+            <p class="empty" ng-if="TBC.emptyArray()">Everything is bought</p>
         </div>
-        <!-- Controller 2-->
-        <div id="bought" ng-controller='AlreadyBoughtController'>
+
+        <!--Controller 2-->
+        <div id="bought" ng-controller="AlreadyBoughtController as ABC">
             <h2>Items Bought</h2>
-            <p>Items Quantity and Cost of each item below</p>
-            <ul>
-                <li ng-model="boughtList"> </li>
-                <p ng-if="empty">Nothing bought yet</p>
-            </ul>
+            <p ng-if="!ABC.emptyArray()">Quantity and total cost of each item below</p>
+            <ol>
+                <li ng-repeat="item in ABC.array">Bought {{item.quantity}} {{item.name}}</li>
+            </ol>
+            <p class="empty" ng-if="ABC.emptyArray()">Nothing bought yet</p>
         </div>
     </body>
 

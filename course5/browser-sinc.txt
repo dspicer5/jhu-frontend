@@ -1,2 +1,2 @@
-cd ./Documents/workspace-vscode/HTML/jhu-frontend/course5
+cd ./Documents/workspace-vscode/HTML/jhu-frontend/course5/mod2_solution/
 browser-sync start --server --directory --files "**/*"

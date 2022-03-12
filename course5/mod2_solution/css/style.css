@@ -10,13 +10,26 @@
   padding-right: 5%;
   padding-left: 5%;
 }
+.empty {
+  color: orange;
+  text-align: center;
+  font-size: 130%;
+}
 body {
   background-color: rgb(36, 36, 53);
   color: whitesmoke;
 }
-h1 {
-  text-align: center;
-}
+h1,
 h2 {
   text-align: center;
+}
+
+input {
+  width: 10%;
+}
+button {
+  float: right;
+}
+li {
+  margin-top: 5px;
 }
