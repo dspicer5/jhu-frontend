@@ -1,0 +1,7 @@
+<!-- templateUrl: 'foundItems.html' -->
+<ol>
+    <li ng-repeat="item in list.found">
+        <button class="remove" ng-click="list.onRemove({index: $index});">Don't want this one!</button> &nbsp;
+        {{item.short_name}},{{ item.name }}, {{item.description}}
+    </li>
+</ol>
