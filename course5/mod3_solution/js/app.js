@@ -4,13 +4,14 @@
     angular.module('NarrowItDownApp', [])
     .controller('NarrowItDownController', NarrowItDownController)
     .service('MenuSearchService', MenuSearchService)
-    .directive('foundItems',FoundItemsDirective);
+    .directive('foundItems',FoundItems);
     
     // controller
     NarrowItDownController.$inject = ['MenuSearchService'];
     function NarrowItDownController(MenuSearchService) {
         var NDC = this;
         NDC.found = [];  
+        // function search for items and return found[]
         NDC.Menu = function () {
             // null search
             if((NDC.searchTerm == undefined) ||(NDC.searchTerm == '')){
@@ -32,6 +33,7 @@
                 }) // end fucntion
             }; // end else     
         } // end menu function
+        // function remove item from found[] 
         NDC.removeItem = function(itemIndex){
             NDC.found.splice(itemIndex, 1);
             if(NDC.found.length < 1){
@@ -40,7 +42,7 @@
         } // end splice
     }// end function
 
-    // http service
+    // http service and search function
     MenuSearchService.$inject = ['$http'];
     function MenuSearchService($http) {
         var service = this;
@@ -65,7 +67,7 @@
     } // end function / http service
 
     // directive from lesson 30
-    function FoundItemsDirective() {
+    function FoundItems() {
         // define ddo
         var ddo={
             templateUrl: 'foundItems.html',
@@ -84,5 +86,4 @@
     function NarrowItDownDirectiveController() {
         var list = this;
     }
-
 }());
