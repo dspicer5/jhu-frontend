@@ -5,7 +5,6 @@
     .controller('NarrowItDownController', NarrowItDownController)
     .service('MenuSearchService', MenuSearchService)
     .directive('foundItems',FoundItems);
-    
     // controller
     NarrowItDownController.$inject = ['MenuSearchService'];
     function NarrowItDownController(MenuSearchService) {
@@ -39,7 +38,6 @@
             } 
         } // end splice
     }// end function
-
     // http service and search function
     MenuSearchService.$inject = ['$http'];
     function MenuSearchService($http) {
