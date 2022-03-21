@@ -63,7 +63,9 @@
             }); // end function
         } // end fuction / service
     } // end function / http service
-
+    // controller funciton for directive
+    function NarrowItDownDirectiveController() {
+    }
     // directive from lesson 30
     function FoundItems() {
         // define ddo
@@ -78,10 +80,5 @@
             bindToController: true
         };
         return ddo;
-    } // end function
-    
-    // construct
-    function NarrowItDownDirectiveController() {
-        var list = this;
-    }
+    } // end function  
 }());
