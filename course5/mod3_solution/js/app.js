@@ -20,10 +20,8 @@
             } 
             else {
                 var promise = MenuSearchService.getMenuItems(NDC.searchTerm);
-                // console.log(promise);  // testing
                 promise.then(function(response){
                     NDC.found = response;
-                    //console.log(NDC.found); // testing 
                     if(NDC.found.length < 1){
                         NDC.message = "Nothing found";
                     } // end if
