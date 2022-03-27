@@ -1,10 +1,12 @@
 (function () {
     'use strict';
-    // begin module
+    // from lesson 25
     angular.module('NarrowItDownApp', [])
     .controller('NarrowItDownController', NarrowItDownController)
     .service('MenuSearchService', MenuSearchService)
-    .directive('foundItems',FoundItems);
+    .directive('foundItems', FoundItems)
+    .constant('MENU_PATH', "https://davids-restaurant.herokuapp.com/menu_items.json");
+    
     // controller
     NarrowItDownController.$inject = ['MenuSearchService'];
     function NarrowItDownController(MenuSearchService) {
@@ -30,6 +32,7 @@
                 }) // end fucntion
             }; // end else     
         } // end menu function
+
         // function remove item from found[] 
         NDC.removeItem = function(itemIndex){
             NDC.found.splice(itemIndex, 1);
@@ -39,20 +42,19 @@
         } // end splice
     }// end function
     // http service and search function
-    MenuSearchService.$inject = ['$http'];
-    function MenuSearchService($http) {
+    MenuSearchService.$inject = ['$http', 'MENU_PATH'];
+    function MenuSearchService($http, MENU_PATH) {
         var service = this;
         service.getMenuItems = function(searchTerm){
             var found = [];
             return $http({
                 method: "GET",
                 // url designated in assignment
-                url: ("https://davids-restaurant.herokuapp.com/menu_items.json")
+                url: MENU_PATH
             })
             .then(function (result) {
                 for(var i=0; i<result.data.menu_items.length; i++){
                     var description = result.data.menu_items[i].description;
-                    // push mathed items to found
                     if (description.toLowerCase().indexOf(searchTerm.toLowerCase())!==-1) {
                         found.push(result.data.menu_items[i]);	
                     } // end if 

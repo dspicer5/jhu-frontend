@@ -1,0 +1,8 @@
+<!-- items view list -->
+<ol>
+  <li ng-repeat="item in $ctrl.items">
+    {{item.name}} &nbsp; - &nbsp;{{item.price_large | currency}}
+    <br>
+    {{item.description}}
+  </li>
+</ol>

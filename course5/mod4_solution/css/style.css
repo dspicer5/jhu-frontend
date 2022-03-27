@@ -1,0 +1,17 @@
+body {
+  color: white;
+  background-color: darkslategrey;
+}
+
+li[ui-sref]:hover {
+  display: inline-block;
+  cursor: pointer;
+  border: solid whitesmoke 1px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.home {
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+}

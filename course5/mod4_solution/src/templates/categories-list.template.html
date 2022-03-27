@@ -1,0 +1,6 @@
+<!--category view list -->
+<ol>
+  <li ng-repeat="item in $ctrl.items" ui-sref="categories.menu_items({short_name: item.short_name})">
+    {{item.name}}
+  </li>
+</ol>

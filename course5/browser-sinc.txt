@@ -1,2 +1,15 @@
-cd ./Documents/workspace-vscode/HTML/jhu-frontend/course5/mod3_solution/
+cd ./Documents/workspace-vscode/HTML/jhu-frontend/course5/mod4_solution/
 browser-sync start --server --directory --files "**/*"
+
+
+
+
+
+
+
+
+cd ./Documents/workspace-vscode/HTML/jhu-frontend/course5/test
+browser-sync start --server --directory --files "**/*"
+
+
+
