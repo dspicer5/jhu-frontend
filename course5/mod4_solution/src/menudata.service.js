@@ -28,6 +28,6 @@
           category: shortName
         }
         });
-      }; // end getItemsForeCategory
-  } // end MenuService
+      }; // end  getItemsForeCategory
+  } // end MenuService  
 })();

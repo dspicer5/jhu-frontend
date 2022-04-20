@@ -42,10 +42,10 @@
       resolve: {
         items: ['$stateParams', 'MenuDataService',
           function ($stateParams, MenuDataService) {
-               // console.log($stateParams.short_name);
+               //  console.log($stateParams.short_name);
                 return MenuDataService.getItemsForCategory($stateParams.short_name);
         }]
       }
     });
-  } // end state
+  } //  end state
 })();
