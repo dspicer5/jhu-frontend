@@ -3,7 +3,6 @@
 
 angular.module('MenuApp')
 .controller('ItemsController', ItemsController);
-
 // url based params 
 ItemsController.$inject = ['$stateParams', 'items'];
 function ItemsController($stateParams, items) {

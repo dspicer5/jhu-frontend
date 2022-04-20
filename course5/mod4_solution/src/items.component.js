@@ -1,6 +1,5 @@
 (function () {
   'use strict';
-  
   // binds  to items-list template
   angular.module('MenuApp')
   .component('items', {
