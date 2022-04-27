@@ -8,8 +8,7 @@ browser-sync start --server --directory --files "**/*"
 
 
 
-cd ./Documents/workspace-vscode/HTML/jhu-frontend/test
-browser-sync start --server --directory --files "**/*"
+
 
 
 

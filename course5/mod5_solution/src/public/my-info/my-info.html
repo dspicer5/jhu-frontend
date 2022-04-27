@@ -1,0 +1,42 @@
+<div class="container" ng-controller="MyInfoController as $ctrl">
+
+  <!--not signed up message-->
+  <div ng-show="!$ctrl.enrolled()">Not Signed Up Yet. &nbsp;&nbsp;
+    <a ui-sref="public.signup">Sign Up Now!</a>
+  </div>
+
+  <fieldset ng-show="$ctrl.enrolled()">
+    <h1>My Saved Information</h1>
+
+    <!--Name-->
+    <div class="col-sm-12">
+      <span class=" col-sm-2">Name:</span>
+      <span class="col-sm-8">{{$ctrl.data.firstName}} {{$ctrl.data.lastName}}
+      </span>
+    </div>
+
+    <!--email-->
+    <div class="col-sm-12">
+      <span class="col-sm-2">Email: </span>
+      <span class="col-sm-8">{{$ctrl.data.email}}
+      </span>
+    </div>
+
+    <!--phone number-->
+    <div class="col-sm-12">
+      <span class="col-sm-2">Phone Number:</span>
+      <span class="col-sm-8"> {{$ctrl.data.phone}}
+      </span>
+    </div>
+
+    <!--favorite dish-->
+    <div class="col-sm-12">
+      <span class="col-sm-2">Favorite Dish:</span>
+      <span class="col-sm-8">{{$ctrl.data.favoriteDish}}
+      </span>
+    </div>
+  </fieldset>
+
+
+
+</div>
