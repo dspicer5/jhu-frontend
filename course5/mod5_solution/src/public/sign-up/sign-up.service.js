@@ -15,6 +15,7 @@
             phoneNum: '',
             favoriteDish: ''
         };
+        // setter for user info
         service.setSignUpData = function (data) {
             userInfo = data;
 
@@ -24,12 +25,14 @@
                     }
                 );
         }
+        // getter for user info
         service.getSignUpData = function () {
             return userInfo;
         }
-        //unique value
+        // check email a key for user info
         service.enrolled = function () {
             return userInfo.email;
         }
+        
     }
 })();

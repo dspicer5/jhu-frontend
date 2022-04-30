@@ -51,6 +51,14 @@
                 }
             })
         }
+        /*
+        $scope.$watch('ctrl.data.favoriteDish', function () {
+            if ($scope.ctrl.data.favoriteDish) {
+                $scope.ctrl.data.favoriteDish = $scope.ctrl.data.favoriteDish.toUpperCase();
+
+            }
+        });
+        */
         $ctrl.lowerCase = function (data) {
                 var lower = data.toLowerCase();
                 return lower;
