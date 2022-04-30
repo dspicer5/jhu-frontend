@@ -7,31 +7,28 @@
     SignUpService.$inject = ['MenuService'];
     function SignUpService(MenuService) {
         var service = this;
-        var UserInfo = {
+        var userInfo = {
             firstName: '',
             lastName: '',
             email: '',
             phone: '',
             favoriteDish: ''
-    
         };
-
         service.setSignUpData = function (data) {
-            UserInfo = data;
+            userInfo = data;
 
             MenuService.getDish(data.favoriteDish)
                 .then(function (response) {
-                        UserInfo.dish = response.data;
+                        userInfo.dish = response.data;
                     }
                 );
         }
-
         service.getSignUpData = function () {
-            return UserInfo;
+            return userInfo;
         }
         //unique value
         service.enrolled = function () {
-            return UserInfo.email;
+            return userInfo.email;
         }
     }
 })();

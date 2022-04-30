@@ -51,7 +51,6 @@
                 }
             })
         }
-
         $ctrl.lowerCase = function (data) {
                 var lower = data.toLowerCase();
                 return lower;
