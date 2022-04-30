@@ -2,6 +2,7 @@ cd ./Documents/workspace-vscode/HTML/jhu-frontend/course5/mod5_solution/
 browser-sync start --server --directory --files "**/*"
 
 
+git push https://github.com/dspicer5/jhu-frontend.git HEAD:gh-pages
 
 
 
