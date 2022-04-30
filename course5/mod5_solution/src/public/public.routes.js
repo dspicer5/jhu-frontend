@@ -45,13 +45,13 @@
                 url: '/sign-up',
                 templateUrl: 'src/public/sign-up/sign-up.html',
                 controller: 'SignUpController',
-                controllerAs: 'SignUpCtrl'
+                controllerAs: 'signUpCtrl'
             })
             .state('public.myinfo', {
                 url: '/my-info',
                 templateUrl: 'src/public/my-info/my-info.html',
                 controller: 'MyInfoController',
-                controllerAs: 'MyInfoCtrl'
+                controllerAs: 'myInfoCtrl'
             });
     }
 })();

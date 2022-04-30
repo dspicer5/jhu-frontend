@@ -29,8 +29,8 @@
                 service.setSignUpData($ctrl.data);
                 $ctrl.data = {};
                 $ctrl.data.message = 'Your information has been saved.';
-                $scope.signupForm.$setPristine();
                 $ctrl.verified = true;
+                $scope.signupForm.$setPristine();
                 return;
             }
 
@@ -40,8 +40,8 @@
                         service.setSignUpData($ctrl.data);
                         $ctrl.data = {};
                         $ctrl.data.message = 'Your information has been saved.';
-                        $scope.signupForm.$setPristine();
                         $ctrl.verified = true;
+                        $scope.signupForm.$setPristine();
                     });
                 }
                 else {
