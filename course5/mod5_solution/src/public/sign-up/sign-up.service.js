@@ -12,6 +12,7 @@
             lastName: '',
             email: '',
             phone: '',
+            phoneNum: '',
             favoriteDish: ''
         };
         service.setSignUpData = function (data) {

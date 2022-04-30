@@ -11,7 +11,7 @@
           <input type="text" class="form-control " name="firstname" placeholder="Example: John" pattern="^[A-Za-z]+$"
             ng-model="ctrl.data.firstName" required>
           <!--check-->
-          <span ng-if="!signupForm.firstname.$pristine && signupForm.firstname.$invalid ">First name is
+          <span ng-if="!signupForm.firstname.$pristine && !signupForm.firstname.$valid ">First name is
             required and must only contain letters without spaces</span>
         </div>
       </div>
@@ -23,7 +23,7 @@
           <input type="text" class="form-control" name="lastname" placeholder="Example: Smith" pattern="^[A-Za-z]+$"
             ng-model="ctrl.data.lastName" required>
           <!--check-->
-          <span ng-if="!signupForm.lastname.$pristine && signupForm.lastname.$invalid">Last name is
+          <span ng-if="!signupForm.lastname.$pristine && !signupForm.lastname.$valid">Last name is
             required and must only contain letters without spaces</span>
         </div>
       </div>
@@ -35,7 +35,7 @@
           <input type="email" class="form-control" name="email" placeholder="Example: jsmith@real.com"
             ng-model="ctrl.data.email" required>
           <!--check-->
-          <span ng-if="!signupForm.email.$pristine && signupForm.email.$invalid  && !ctrl.enrolled">
+          <span ng-if="!signupForm.email.$pristine && !signupForm.email.$valid  && !ctrl.enrolled">
             Valid email address in proper format is required</span>
         </div>
       </div>
@@ -45,22 +45,22 @@
         <label class="col-sm-3 control-label">Phone Number:</label>
         <div class=" col-sm-9">
           <input type="text" class="form-control" name="phone" ng-model="ctrl.data.phone"
-            placeholder="Example: 0123456789" pattern="\d{10}" required>
+            placeholder="Example: 0123456789" pattern="\d{10}" maxlength="10" required>
           <!--check-->
-          <span ng-if="!signupForm.phone.$pristine && signupForm.phone.$invalid">10 digit Phone
+          <span ng-if="!signupForm.phone.$pristine && !signupForm.phone.$valid">10 digit Phone
             Number is required</span>
         </div>
       </div>
 
-      <!--favorite-->
+      <!--favorite Optional form -->
       <div class="form-group">
-        <label for="favoritedish" class="col-sm-3 control-label">Favorite Dish (Optional):</label>
+        <label for="favoritedish" class="col-sm-3 control-label">Favorite Dish:</label>
         <div class="col-sm-9">
           <input type="text" class="form-control" name="favoritedish" ng-model="ctrl.data.favoriteDish"
-            placeholder="Example: SP4" pattern="^[A-Za-z]{1,2}\d{1,2}$">
+            placeholder="Example: SP4" pattern="^[A-Za-z]{1,2}\d{1,2}$" ng-trim="false">
           <!--pattern="^[A-Za-z]{1,2}\d{1,2}$"-->
           <!--check-->
-          <span ng-if="!signupForm.favoritedish.$pristine && signupForm.favoritedish.$invalid">If you
+          <span ng-if="!signupForm.favoritedish.$valid">If you
             are unsure of your favorite dish code please leave this field blank</span>
         </div>
       </div>
@@ -68,7 +68,7 @@
       <!--submit-->
       <div class="form-group">
         <div class="col-sm-9 col-sm-offset-3">
-          <button type="submit" class="btn btn-primary" ng-disabled="signupForm.$invalid">Sign Up!
+          <button type="submit" class="btn btn-primary" ng-disabled="!signupForm.$valid">Sign Up!
           </button>
         </div>
       </div>

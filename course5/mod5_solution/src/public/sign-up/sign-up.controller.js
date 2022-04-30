@@ -15,7 +15,7 @@
             $ctrl.data.firstName = $ctrl.capitalizeFirst($ctrl.data.firstName);
             $ctrl.data.lastName = $ctrl.capitalizeFirst($ctrl.data.lastName);
             $ctrl.data.email = $ctrl.lowerCase($ctrl.data.email);
-            $ctrl.data.phone = $ctrl.seperate($ctrl.data.phone);
+            $ctrl.data.phoneNum = $ctrl.seperate($ctrl.data.phone);
             $ctrl.data.favoriteDish = $ctrl.upperCase($ctrl.data.favoriteDish);
             $ctrl.checkData();
         }
@@ -56,7 +56,12 @@
                 return lower;
         }
         $ctrl.upperCase = function (data) {
-            var upper = data.toUpperCase();
+            if (typeof $ctrl.data.favoriteDish == 'undefined') {
+                var upper = data;
+            }
+            else {
+                var upper = data.toUpperCase();
+            }
             return upper;
         }
         $ctrl.capitalizeFirst = function (data) {
