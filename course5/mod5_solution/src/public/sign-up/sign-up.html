@@ -54,7 +54,7 @@
 
       <!--favorite Optional form -->
       <div class="form-group">
-        <label for="favoritedish" class="col-sm-3 control-label">Favorite Dish:</label>
+        <label for="favoritedish" class="col-sm-3 control-label">Favorite Dish (optional):</label>
         <div class="col-sm-9">
           <input type="text" class="form-control" name="favoritedish" ng-model="ctrl.data.favoriteDish"
             placeholder="Example: SP4" pattern="^[A-Za-z]{1,2}\d{1,2}$" ng-trim="false">
@@ -73,7 +73,7 @@
         </div>
       </div>
 
-      <!--message  Incomplete-->
+      <!--message -->
       <div class="col-sm-9 col-sm-offset-3" ng-show="ctrl.verified">
         <span ng-show="ctrl.enrolled"></span>
         <span ng-show="!ctrl.enrolled"></span>
