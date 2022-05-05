@@ -13,13 +13,13 @@
             email: '',
             phone: '',
             phoneNum: '',
-            favoriteDish: ''
+            dishNum: ''
         };
         // setter for user info
         service.setSignUpData = function (data) {
             userInfo = data;
 
-            MenuService.getDish(data.favoriteDish)
+            MenuService.getDish(data.dishNum)
                 .then(function (response) {
                         userInfo.dish = response.data;
                     }
@@ -30,7 +30,7 @@
             return userInfo;
         }
         // check email a key for user info
-        service.enrolled = function () {
+        service.registered = function () {
             return userInfo.email;
         }
         

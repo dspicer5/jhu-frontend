@@ -16,14 +16,14 @@
             $ctrl.data.lastName = $ctrl.capitalizeFirst($ctrl.data.lastName);
             $ctrl.data.email = $ctrl.lowerCase($ctrl.data.email);
             $ctrl.data.phoneNum = $ctrl.seperate($ctrl.data.phone);
-            $ctrl.data.favoriteDish = $ctrl.upperCase($ctrl.data.favoriteDish);
+            $ctrl.data.dishNum = $ctrl.upperCase($ctrl.data.dishNum);
             $ctrl.checkData();
         }
-
+        // validate dish number
         $ctrl.checkData = function () {
             $ctrl.verified = false;
-            $ctrl.enrolled = true;
-            var dish = $ctrl.data.favoriteDish;
+            $ctrl.registered = true;
+            var dish = $ctrl.data.dishNum;
 
             if (!dish) {
                 service.setSignUpData($ctrl.data);
@@ -33,7 +33,6 @@
                 $scope.signupForm.$setPristine();
                 return;
             }
-
             MenuService.checkDish(dish).then(function (valid) {
                 if (valid) {
                     $timeout(function () {
@@ -46,25 +45,19 @@
                 }
                 else {
                     $ctrl.data.message = "No such menu number exists.";
-                    $ctrl.enrolled = false;
+                    $ctrl.registered = false;
                     $ctrl.verified = true;
                 }
             })
         }
-        /*
-        $scope.$watch('ctrl.data.favoriteDish', function () {
-            if ($scope.ctrl.data.favoriteDish) {
-                $scope.ctrl.data.favoriteDish = $scope.ctrl.data.favoriteDish.toUpperCase();
 
-            }
-        });
-        */
+        // formatting functions
         $ctrl.lowerCase = function (data) {
                 var lower = data.toLowerCase();
                 return lower;
         }
         $ctrl.upperCase = function (data) {
-            if (typeof $ctrl.data.favoriteDish == 'undefined') {
+            if (typeof $ctrl.data.dishNum == 'undefined') {
                 var upper = data;
             }
             else {
